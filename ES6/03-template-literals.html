@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Template literals</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+  const ireland = {
+    live: 'Dublin',
+    love: 'Galway'
+  };
+
+  const text = `Eu moro em ${ireland.live} e sou apaixonado por ${ireland.love}`;
+  console.log(text);
+
+  const fruits = `
+    banana
+    laranja
+    uva
+  `;
+  console.log(fruits);
+
+  const article = {
+    title: 'Aprendendo Teplate Strings',
+    intro: 'Breve explicação sobre template strings do ES6',
+    body: 'loVelit laboris cupidatat anim laboris amet ad et sunt ipsum.',
+    tags: ['es6', 'js', 'template-literal'],
+    author: 'Willian'
+  };
+
+  function renderAuthor(name) {
+    return (name) ? name : 'unknown';
+  }
+
+  const markup = `
+    <article>
+      <header>
+        <h1>${article.title}</h1>
+      </header>
+      <section>
+        <p>${article.intro}</p>
+      </section>
+      <footer>
+        <ul>
+          ${article.tags.map((tag) => `<li>${tag}</li>`).join('')}
+        </ul>
+        <p>Author: ${renderAuthor(article.author)}</p>
+      </footer>
+    </article>
+  `;
+
+  document.body.innerHTML = markup;
+</script>
+
+</html>
