@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promisses example</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+  var voos = fetch('https://plano-de-voo.herokuapp.com/api/voos');
+
+  // console.log(voos);
+  // pending
+  // resolved
+  // rejected
+
+  voos
+    .then(data => data.json())
+    .then(data => data.map(voo => {
+      console.log(`${voo.id} - ${voo.numero}`);
+    }))
+    .catch(err => console.error(err));
+
+  // Promisses Multiplas
+
+  const currency = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve({currency: 'euro', value: 3.50});
+    }, 5000);
+  });
+
+  const coutries = new Promise((resolve, reject) => {
+    resolve(['Ireland', 'Englad', 'Scotland']);
+  });
+
+  Promise
+    .all([currency, coutries]) //Responde quando todas as promessas forem resolvidas
+    .then(responses => {
+      console.log(responses);
+    });
+
+  Promise
+    .race([currency, countries]) //Responde quando uma das promessas responder e ignora as outras
+    .then(responses => {
+      console.log(responses);
+    });
+
+</script>
+
+</html>
