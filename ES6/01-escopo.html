@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Escopo</title>
+</head>
+<body>
+
+</body>
+
+<script>
+  // Global
+  var animal = 'cat';
+
+  {
+    // Local
+    let animal = 'dog';
+    console.log(animal);
+  }
+
+  console.log(animal);
+
+  // Constante - não posso reatribuir
+  const number = 28;
+
+  const thiago = {
+    name: 'Thiago',
+    age: 25
+  }
+
+  console.log(thiago.age);
+
+  // No caso de objetos, os valores podem ser reatribuidos
+  thiago.age = 27;
+
+  console.log(thiago.age);
+
+</script>
+</html>
