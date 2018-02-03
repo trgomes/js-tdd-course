@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Arrow Function</title>
+</head>
+
+<body>
+</body>
+
+</html>
+
+<script>
+  const fruits = ['banana', 'apple', 'orange'];
+
+  /* Função tradicional */
+  const tradicional = fruits.map(function (fruit) {
+    return `I love ${fruit}`;
+  });
+
+  /* Arrow function */
+  const love = fruits.map((fruit) => {
+    return `I love ${fruit}`;
+  });
+
+  /* Arrow function compctada */
+  const loveArrow = fruits.map(fruit => `I love ${fruit}`);
+
+  /* Arrow function concatenada com varios metodos */
+  const loveArrowFilter = fruits
+    .filter(fruit => fruit === 'banana')
+    .map(fruit => `I love ${fruit}`)
+
+  console.log(love, loveArrow, loveArrowFilter);
+</script>
