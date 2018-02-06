@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Destructing Objects</title>
+</head>
+<body>
+
+</body>
+
+<script>
+  var data = {
+    name: 'Thiago',
+    surname: 'Gomes',
+    age: 26,
+    social: {
+      twitter: '@Thiago_Gomes',
+      facebook: '/thiagogomes'
+    }
+  }
+
+  const {name, surname} = data;
+  console.log(name, surname);
+
+  const {facebook, twitter} = data.social;
+  console.log(facebook, twitter);
+
+  const {facebook: fb} = data.social;
+  console.log(fb);
+
+</script>
+</html>
