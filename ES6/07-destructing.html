@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Destructing</title>
+</head>
+<body>
+
+</body>
+
+<script>
+
+  //Destructing object
+  var data = {
+    name: 'Thiago',
+    surname: 'Gomes',
+    age: 26,
+    social: {
+      twitter: '@Thiago_Gomes',
+      facebook: '/thiagogomes'
+    }
+  }
+
+  const {name, surname} = data;
+  console.log(name, surname);
+
+  const {facebook, twitter} = data.social;
+  console.log(facebook, twitter);
+
+  const {facebook: fb} = data.social;
+  console.log(fb);
+
+  //Destructing em array
+  const arr = ['Thiago', 'Gomes', 29];
+  const[nome, sobrenome, idade] = arr;
+
+  const str = `Meu nome é ${nome} ${sobrenome} e tenho ${idade} anos`;
+  console.log(str);
+
+  //Destructing swap
+  let a = 42;
+  let b = 21;
+
+  [a, b] = [b, a];
+
+  console.log(a, b);
+
+</script>
+</html>
