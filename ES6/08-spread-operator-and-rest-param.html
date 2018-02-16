@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Spread Operator e Rest Params</title>
+</head>
+<body>
+  <script>
+
+    let front = ['angular', 'react', 'vue'];
+    let back = ['php', 'java', 'python'];
+    //Concatenando arrays e colocando uma nova tecnologia no meio
+    let fullstack = [...front, 'RxJS', ...back];
+
+    console.log(fullstack);
+
+    //Usando spread dentro de função
+    function makeSandwich(bread, cheese){
+      console.log(`Your sandwich with ${bread} bread and ${cheese}`);
+    }
+
+    let ingredients = ['white','cheddar']
+
+    makeSandwich(...ingredients);
+
+
+    //Rest Param
+    function multiplay(mult, ...args){
+      return args.map(args => args * mult);
+    }
+
+    console.log(multiplay(2, 1, 2, 3, 4));
+
+  </script>
+</body>
+</html>
