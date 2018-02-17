@@ -46,7 +46,7 @@
     });
 
   Promise
-    .race([currency, countries]) //Responde quando uma das promessas responder e ignora as outras
+    .race([currency, countries]) //Responde quando uma das promessas for resolvida e ignora as outras
     .then(responses => {
       console.log(responses);
     });
