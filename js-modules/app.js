@@ -19,5 +19,5 @@ console.log(arr4);
 console.log(soma(3,2));
 console.log(sub(8,5));
 console.log(mult(5,3));
-console.log(dividir(6,3));
+console.log(dividir(9,3));
 console.log(PI);
